@@ -39,7 +39,7 @@ public class MovieController {
             alert.setTitle("Hiba");
             alert.setHeaderText("Hiba történt a adatok lekérdezése után!");
             alert.setContentText(e.getMessage());
-            alert.show();
+
         }
 
     }
