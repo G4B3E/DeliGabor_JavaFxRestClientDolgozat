@@ -2,10 +2,10 @@ package com.example.deligabor_javafxrestclientdolgozat;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.io.IOException;
 
 public class MovieController {
 
@@ -26,6 +26,23 @@ public class MovieController {
     @FXML
     private TableColumn<Movie,String> dijakCol;
 
+    @FXML
+    private void initialize(){
+        filmekCol.setCellValueFactory(new PropertyValueFactory<>("filmek"));
+        ertekelesCol.setCellValueFactory(new PropertyValueFactory<>("ertekelesek"));
+        evjaratCol.setCellValueFactory(new PropertyValueFactory<>("evjarat"));
+        dijakCol.setCellValueFactory(new PropertyValueFactory<>("dijak"));
+        try {
+            RequestHandler.get(App.BASE_URL);
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Hiba");
+            alert.setHeaderText("Hiba történt a adatok lekérdezése után!");
+            alert.setContentText(e.getMessage());
+            alert.show();
+        }
+
+    }
 
     @FXML
     public void InsertClick(ActionEvent actionEvent) {

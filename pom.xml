@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.deligabor_javafxrestclientdolgozat/com.example.deligabor_javafxrestclientdolgozat.HelloApplication
+                                com.example.deligabor_javafxrestclientdolgozat/com.example.deligabor_javafxrestclientdolgozat.App
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
